@@ -61,7 +61,7 @@ For the purpose of this project I have used Visual Studio as my IDE with the pym
 - Click on the lightning icon (1) to connect the pico and then create a terminal (2).
 
   ![](img/img1.png)
-- Start development mode by clicking <\>. The files should now be uploaded to the pico everytime you save your project.
+- Start development mode by clicking </>. The files should now be uploaded to the pico everytime you save your project.
   
   ![](img/img2.png)
 
