@@ -19,16 +19,20 @@ This project will give insight on the environment it is placed in. In my case, I
 
 ## Material
 
-| Material | Description |  |
-| --- | -------- | - |
-| DHT11 | Temperature and Humidity Sensor |[link](https://www.electrokit.com/produkt/digital-temperatur-och-fuktsensor-dht11/)|
-| Photo Resistor | Light dependant resistor for reading light level | [link](https://www.electrokit.com/produkt/ljussensor/)
-|Breadboard 840 connections | | [link](https://www.electrokit.com/produkt/kopplingsdack-840-anslutningar/)
-|Jumper cables (Male to male)|| [link](https://www.electrokit.com/produkt/labbsladd-20-pin-15cm-hane-hane/)
-|USB cable|| [link](https://www.electrokit.com/produkt/usb-kabel-a-hane-micro-b-5p-hane-1-8m/)
-|Optional) Jumper cables (Male to female)|| [link](https://www.electrokit.com/produkt/labbsladd-40-pin-30cm-hona-hane/)
-|(Optional) Breadboard 270 connections|| [link](https://www.electrokit.com/produkt/kopplingsdack-270-anslutningar/)
-||| [link]()
+The sensor used are DHT11 and a photo resistor.
+
+DHT11 is a digital humidity and temperature sensor with a measurement range of 20 to 90 Relative humidity and 0 - 50°C.
+The photoresistor module conists of a photo resistor and 10 kΩ in-line resistor. It has a analogue output and the resistance of the photoresistor will decrease in the presence of light.
+
+|| Material | Cost | |
+|-| --- | -------- | - |
+|<img src="img/picowh.jpg" width="100">|Raspberry Pi Pico WH| 109 SEK | [link](https://www.electrokit.com/produkt/raspberry-pi-pico-wh/)|
+|<img src="img/dht11.jpg" width="100">| DHT11 |  49 SEK |[link](https://www.electrokit.com/produkt/digital-temperatur-och-fuktsensor-dht11/)|
+|<img src="img/ldr.jpg" width="100">|  Photo Resistor | 39 SEK | [link](https://www.electrokit.com/produkt/ljussensor/)
+|<img src="img/bb.jpg" width="100">|Breadboard 840 connections | 69 SEK |[link](https://www.electrokit.com/produkt/kopplingsdack-840-anslutningar/)
+|<img src="img/jumper.jpg" width="100">|Jumper cables (Male to male)| 29 SEK| [link](https://www.electrokit.com/produkt/labbsladd-20-pin-15cm-hane-hane/)
+|<img src="img/usbcable.jpg" width="100">|USB cable| 39 SEK |[link](https://www.electrokit.com/produkt/usb-kabel-a-hane-micro-b-5p-hane-1-8m/)
+
 
 Explain all material that is needed. All sensors, where you bought them and their specifications. Please also provide pictures of what you have bought and what you are using.
 
@@ -38,29 +42,49 @@ Explain all material that is needed. All sensors, where you bought them and thei
 
 ## Computer setup
 
-For the purpose of this project I have used Visual Studio as my IDE
+For the purpose of this project I have used Visual Studio as my IDE with the pymakr plugion. And for programming the pico I'm using micropython
 
-How is the device programmed. Which IDE are you using. Describe all steps from flashing the firmware, installing plugins in your favorite editor. How flashing is done on MicroPython. The aim is that a beginner should be able to understand.
+### Update the firmware
 
-- Chosen IDE
-- How the code is uploaded
-- Steps that you needed to do for your computer. Installation of Node.js, extra drivers, etc.
+- Download micropython for [Pico W](https://micropython.org/download/rp2-pico-w/).
+- Hold down the BOOTSEL button of the pico and connect it to the computer with a USB cable.
+- Copy the uf2 file to the pico mass storage.
+
+### Installing IDE and plugins
+
+- Download and install [Visual Studio Code](https://code.visualstudio.com)
+- Download and install [Node.js](https://nodejs.org/en)
+- In VSCode, search for "pymakr" in the Extension tab and install it.
+
+### Program and upload to Pico
+
+- Go to the pymakr tab
+- Click on create new project and choose or creat a folder for the project
+- Click on Add device to add your pico top the project.
+- Click on the lightning icon (1) to connect the pico and then create a terminal (2).
+
+  ![](img/img1.png)
+- Start development mode by clicking <\>. The files should now be uploaded to the pico everytime you save your project.
+  
+  ![](img/img2.png)
+
 
 ## Putting everything together
 
-How is all the electronics connected? Describe all the wiring, good if you can show a circuit diagram. Be specific on how to connect everything, and what to think of in terms of resistors, current and voltage. Is this only for a development setup or could it be used in production?
+Connect the sensors to the pico using this diagram:
 
-- Circuit diagram (can be hand drawn)
+  ![](img/wiring.png)
 
+The photo resistors must be connected a ADC pin (GP26, GP27, GP28)\
+DHT11 can be connected to any GP pin. In the diagram they are connected to GP16 and GP17.
+
+Negative on the sensors should på connected to a GND pin and positive to the 3V3(OUT) pin.
 
 ## Platform
 
-Describe your choice of platform. If you have tried different platforms it can be good to provide a comparison.
+My platform of choice is [Adafruit](https://io.adafruit.com) since it's really easy to use. The pico connects to the platform via MQTT and can be used to create a dashboard to monitor the sensor values in real time and over time. Actions can be created that are triggered by the sensor values or they can be scheduled.
 
-Is your platform based on a local installation or a cloud? Do you plan to use a paid subscription or a free? Describe the different alternatives on going forward if you want to scale your idea.
-
-- Describe platform in terms of functionality
-
+I'm using the free tier so data can be sent 30 times each minute. For this project it is sufficient.
 
 ## The code
 
