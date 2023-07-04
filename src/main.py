@@ -12,13 +12,13 @@ AIO_SERVER = "io.adafruit.com"
 AIO_PORT = 1883
 AIO_USER = secrets["aio_user"]
 AIO_KEY = secrets["aio_key"]
-AIO_CLIENT_ID = ubinascii.hexlify(machine.unique_id())  # Can be anything
-AIO_RAWLIGHT1_FEED = "tomenqvist/feeds/rawlight1"
-AIO_RAWLIGHT2_FEED = "tomenqvist/feeds/rawlight2"
-AIO_TEMP_FEED = "tomenqvist/feeds/temp"
-AIO_HUMIDITY_FEED = "tomenqvist/feeds/hum"
-AIO_RELDARK_FEED = "tomenqvist/feeds/reldark"
-AIO_MEANLIGHT_FEED = "tomenqvist/feeds/meanlight"
+AIO_CLIENT_ID = ubinascii.hexlify(machine.unique_id()) 
+AIO_RAWLIGHT1_FEED = "username/feeds/feedname" # Update these with the MQTT keys
+AIO_RAWLIGHT2_FEED = "username/feeds/feedname"
+AIO_TEMP_FEED = "username/feeds/feedname"
+AIO_HUMIDITY_FEED = "username/feeds/feedname"
+AIO_RELDARK_FEED = "username/feeds/feedname"
+AIO_MEANLIGHT_FEED = "username/feeds/feedname"
 # END SETTINGS
 
 # PICO SETTINGS
