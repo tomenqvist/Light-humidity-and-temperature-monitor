@@ -67,17 +67,21 @@ Is your platform based on a local installation or a cloud? Do you plan to use a 
 ### Connecting to a network
 
 The boot.py file makes sure the pico is connected to a network using Wifi. SSID and passwords are stored in secrets.py
-https://github.com/tomenqvist/projekt_v1/blob/83582cdca8405a3ce2af5044cc45773be57faf0f/boot.py#L1-L51
+
+https://github.com/tomenqvist/project_v2/blob/651fe7cd284308049c1e42ea8408e6b2f0e07ca0/src/boot.py#L1-L51
 
 ### Sensors
 In the sensors.py file we need to first import necessary libraries and create and populate our queues for storing sensor values
-https://github.com/tomenqvist/projekt_v1/blob/9b578b3c119abfe3d059d0828362a3b3fe881a6d/sensors.py#L1-L27
+
+https://github.com/tomenqvist/project_v2/blob/651fe7cd284308049c1e42ea8408e6b2f0e07ca0/src/sensors.py#L1-L27
 
 We also need to implement functions for dealing with queues (the deque library did not work for me)
-https://github.com/tomenqvist/projekt_v1/blob/9b578b3c119abfe3d059d0828362a3b3fe881a6d/sensors.py#L124-L129
+
+https://github.com/tomenqvist/project_v2/blob/651fe7cd284308049c1e42ea8408e6b2f0e07ca0/src/sensors.py#L124-L129
 
 This is the function for reading and calculating mean light values:
-https://github.com/tomenqvist/projekt_v1/blob/9b578b3c119abfe3d059d0828362a3b3fe881a6d/sensors.py#L54-L120
+
+https://github.com/tomenqvist/project_v2/blob/651fe7cd284308049c1e42ea8408e6b2f0e07ca0/src/sensors.py#L54-L120
 
 The light values of each sensor are stored in the queue, and then a sorted copy of the are created from which the mean value are calculated from position 2 to 7, meaning outliers (position 0, 1, 7 and 8) are disregarded. Then the mean value of those two values are calculated and returned. 
 
@@ -90,10 +94,12 @@ The darkness percentage are also calculated by using the min and max light value
 First we need to import libraries and set user, password, key and paths to adafruit topics and at waht rate we want to send the data. 
 
 **Remenber to include the mqtt.py file in your project since MQTT is used to send data to adafruit**
-https://github.com/tomenqvist/projekt_v1/blob/78345b2e3cc270654e9e4a27a2ba527e782a098d/main.py#L1-L25
+
+https://github.com/tomenqvist/project_v2/blob/651fe7cd284308049c1e42ea8408e6b2f0e07ca0/src/main.py#L1-L25
 
 Then we create a function for sending the data, and finally we run an infinite loop that calls the sensor and send_data functions:
-https://github.com/tomenqvist/projekt_v1/blob/78345b2e3cc270654e9e4a27a2ba527e782a098d/main.py#L27-L74
+
+https://github.com/tomenqvist/project_v2/blob/651fe7cd284308049c1e42ea8408e6b2f0e07ca0/src/main.py#L27-L74
 
 ## Transmitting the data / connectivity
 
