@@ -127,13 +127,35 @@ https://github.com/tomenqvist/project_v2/blob/651fe7cd284308049c1e42ea8408e6b2f0
 
 ## Transmitting the data / connectivity
 
-How is the data transmitted to the internet or local server? Describe the package format. All the different steps that are needed in getting the data to your end-point. Explain both the code and choice of wireless protocols.
+The pico is connected wirelessly to the internet using WiFi and the data is sent to Adafruit via the MQTT protocol as described previously. The data is sent every 15 seconds, but this could easyly be increased or decreased by changing the update_rate variable.
 
-- How often is the data sent?
-- Which wireless protocols did you use (WiFi, LoRa, etc …)?
-- Which transport protocols were used (MQTT, webhook, etc …)
+- Create an account on [Adafruit](https://io.adafruit.com)
+- Navigate to Feeds, click on "New Feed"
+- Click on the created feed and navigate to "Feed info"
+  ![](img/ada.png)
+- Create a feed for each corresponding feed in main.py and update the keys
+  https://github.com/tomenqvist/project_v2/blob/780607865531a93ace8a7306cbbea94df065d3d8/src/main.py#L16-L21
 
 ## Presenting the data
+
+The present the data, you need to creat a dashboard on Adafruit:
+- Navigate to Dashboards
+- Click on New Dashboard and give it a name and description
+- Click on the newly created dashboard
+- Click on the settings icon in the top right corner
+
+   ![](img/dash1.png)
+  
+- Click on create new block
+  
+  ![](img/dash2.png)
+
+- Choose what kind of block you want to create and then choose the feed you want to connect.
+- Edit the settings (title, history lenght ect.) and click Create Block
+- Repeat for every feed you want to present visually.
+
+### Exampel of a dashboard
+![](img/example_dash.png)
 
 Describe the presentation part. How is the dashboard built? How long is the data preserved in the database?
 
