@@ -19,6 +19,8 @@ This project will give insight on the environment it is placed in. In my case, I
 
 ## Material
 
+The microcontroller im usining is the Pico WH. It has 30 GPIO pins, 256kB RAM, 2MB on board flash and WiFi. It can be programmed uring micropython or C/C++.
+
 The sensor used are DHT11 and a photo resistor.
 
 DHT11 is a digital humidity and temperature sensor with a measurement range of 20 to 90 Relative humidity and 0 - 50°C.
@@ -34,11 +36,6 @@ The photoresistor module conists of a photo resistor and 10 kΩ in-line resistor
 |<img src="img/usbcable.jpg" width="100">|USB cable| 39 SEK |[link](https://www.electrokit.com/produkt/usb-kabel-a-hane-micro-b-5p-hane-1-8m/)
 
 
-Explain all material that is needed. All sensors, where you bought them and their specifications. Please also provide pictures of what you have bought and what you are using.
-
-- List of material
-- What the different things (sensors, wires, controllers) do - short specifications
-- Where you bought them and how much they cost
 
 ## Computer setup
 
@@ -157,14 +154,17 @@ The present the data, you need to creat a dashboard on Adafruit:
 ### Exampel of a dashboard
 ![](img/example_dash.png)
 
-Describe the presentation part. How is the dashboard built? How long is the data preserved in the database?
+The data is saved every 15 second, the same rate as the pico uploads it. And the data for each feed are stored at Adafruit for 30 days.
 
-- Provide visual examples on how the dashboard looks. Pictures needed.
-- How often is data saved in the database.
 
-## Finalizing the design
+## Final Results
 
-Show the final results of your project. Give your final thoughts on how you think the project went. What could have been done in an other way, or even better? Pictures are nice!
+The project has been placed at a window bordering my balcony. The DHT11 sensors have been placed outside and the Photo Resistors are mounted in the inside of the window.
 
-- Show final results of the project
-- Pictures
+I also 3D-printed casing for the sensors using this design: [DHT11 Sensor Case](https://www.printables.com/model/88794)
+
+<img src="img/final1.jpeg" width="50%">
+<img src="img/final2.jpeg" width="50%">
+
+I think the project went well. For the purpose of monitoring the temperature outside, another sensor should be used since the lower range for the DHT11 is 0°C. For a more visually pleasing project, some soldering should be made and the micocontroller could be placed in a 3d-printed casing.
+
