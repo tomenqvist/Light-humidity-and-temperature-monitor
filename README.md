@@ -116,11 +116,11 @@ First we need to import libraries and set user, password, key and paths to adafr
 
 **Remenber to include the mqtt.py file in your project since MQTT is used to send data to adafruit**
 
-https://github.com/tomenqvist/project_v2/blob/651fe7cd284308049c1e42ea8408e6b2f0e07ca0/src/main.py#L1-L25
+https://github.com/tomenqvist/project_v2/blob/416c56fcb4bf75e3ae5025586a6bb164380d0ee3/src/main.py#L1-L25
 
 Then we create a function for sending the data, and finally we run an infinite loop that calls the sensor and send_data functions:
 
-https://github.com/tomenqvist/project_v2/blob/651fe7cd284308049c1e42ea8408e6b2f0e07ca0/src/main.py#L27-L74
+https://github.com/tomenqvist/project_v2/blob/416c56fcb4bf75e3ae5025586a6bb164380d0ee3/src/main.py#L27-L74
 
 ## Transmitting the data / connectivity
 
