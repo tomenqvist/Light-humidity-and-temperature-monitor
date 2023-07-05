@@ -19,7 +19,7 @@ This project will give insight on the environment it is placed in. In my case, I
 
 ## Material
 
-The microcontroller I'm usining is the Pico WH. It has 30 GPIO pins, 256kB RAM, 2MB on board flash and WiFi. It can be programmed uring micropython or C/C++.
+The microcontroller I'm using is the Pico WH. It has 30 GPIO pins, 256kB RAM, 2MB on board flash and WiFi. It can be programmed using micropython or C/C++.
 
 The sensor used are DHT11 and a photo resistor.
 
