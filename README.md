@@ -70,7 +70,7 @@ For the purpose of this project I have used Visual Studio as my IDE with the pym
 
 Connect the sensors to the pico using this diagram:
 
-  ![](img/wiring.png)
+  ![](img/wiring_v2.png)
 
 The photo resistors must be connected a ADC pin (GP26, GP27, GP28)\
 DHT11 can be connected to any GP pin. In the diagram they are connected to GP16 and GP17.
