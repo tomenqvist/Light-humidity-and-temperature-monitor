@@ -1,5 +1,5 @@
 
-# Light, humidity and temperature sensor
+# Light, humidity and temperature monitor
 Tom Enqvist\
 te222qz
 
