@@ -79,7 +79,7 @@ Negative on the sensors should på connected to a GND pin and positive to the 3V
 
 ## Platform
 
-My platform of choice is [Adafruit](https://io.adafruit.com) since it's really easy to use. The pico connects to the platform via MQTT and can be used to create a dashboard to monitor the sensor values in real time and over time. Actions can be created that are triggered by the sensor values or they can be scheduled.
+My platform of choice is [Adafruit](https://io.adafruit.com) since it's really easy to use. Dafruit is a cloud platform and the pico connects to the platform via MQTT and can be used to create a dashboard to monitor the sensor values in real time and over time. Actions can be created that are triggered by the sensor values or they can be scheduled.
 
 I'm using the free tier so data can be sent 30 times each minute. For this project it is sufficient.
 
