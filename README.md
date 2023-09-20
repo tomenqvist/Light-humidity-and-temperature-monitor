@@ -88,20 +88,23 @@ I'm using the free tier so data can be sent 30 times each minute. For this proje
 ### Connecting to a network
 
 The boot.py file makes sure the pico is connected to a network using Wifi. SSID and passwords are stored in secrets.py
-
+https://github.com/tomenqvist/Light-humidity-and-temperature-monitor/blob/ea57ef7dd91d466e98edd2c5e0f59ff57dd707a3/src/boot.py#L1-L51
 https://github.com/tomenqvist/project_v2/blob/651fe7cd284308049c1e42ea8408e6b2f0e07ca0/src/boot.py#L1-L51
 
 ### Sensors
 In the sensors.py file we need to first import necessary libraries and create and populate our queues for storing sensor values
 
+https://github.com/tomenqvist/Light-humidity-and-temperature-monitor/blob/ea57ef7dd91d466e98edd2c5e0f59ff57dd707a3/src/sensors.py#L1-L27
 https://github.com/tomenqvist/project_v2/blob/651fe7cd284308049c1e42ea8408e6b2f0e07ca0/src/sensors.py#L1-L27
 
 We also need to implement functions for dealing with queues (the deque library did not work for me)
 
+https://github.com/tomenqvist/Light-humidity-and-temperature-monitor/blob/ea57ef7dd91d466e98edd2c5e0f59ff57dd707a3/src/sensors.py#L124-L129
 https://github.com/tomenqvist/project_v2/blob/651fe7cd284308049c1e42ea8408e6b2f0e07ca0/src/sensors.py#L124-L129
 
 This is the function for reading and calculating mean light values:
 
+https://github.com/tomenqvist/Light-humidity-and-temperature-monitor/blob/ea57ef7dd91d466e98edd2c5e0f59ff57dd707a3/src/sensors.py#L54-L120
 https://github.com/tomenqvist/project_v2/blob/651fe7cd284308049c1e42ea8408e6b2f0e07ca0/src/sensors.py#L54-L120
 
 The light values of each sensor are stored in the queue, and then a sorted copy of the are created from which the mean value are calculated from position 2 to 7, meaning outliers (position 0, 1, 7 and 8) are disregarded. Then the mean value of those two values are calculated and returned. 
@@ -116,10 +119,12 @@ First we need to import libraries and set user, password, key and paths to adafr
 
 **Remenber to include the mqtt.py file in your project since MQTT is used to send data to adafruit**
 
+https://github.com/tomenqvist/Light-humidity-and-temperature-monitor/blob/ea57ef7dd91d466e98edd2c5e0f59ff57dd707a3/src/main.py#L1-L25
 https://github.com/tomenqvist/project_v2/blob/416c56fcb4bf75e3ae5025586a6bb164380d0ee3/src/main.py#L1-L25
 
 Then we create a function for sending the data, and finally we run an infinite loop that calls the sensor and send_data functions:
 
+https://github.com/tomenqvist/Light-humidity-and-temperature-monitor/blob/ea57ef7dd91d466e98edd2c5e0f59ff57dd707a3/src/main.py#L27-L74
 https://github.com/tomenqvist/project_v2/blob/416c56fcb4bf75e3ae5025586a6bb164380d0ee3/src/main.py#L27-L74
 
 ## Transmitting the data / connectivity
@@ -131,6 +136,7 @@ The pico is connected wirelessly to the internet using WiFi and the data is sent
 - Click on the created feed and navigate to "Feed info"
   ![](img/ada.png)
 - Create a feed for each corresponding feed in main.py and update the keys
+  https://github.com/tomenqvist/Light-humidity-and-temperature-monitor/blob/ea57ef7dd91d466e98edd2c5e0f59ff57dd707a3/src/main.py#L16-L21
   https://github.com/tomenqvist/project_v2/blob/780607865531a93ace8a7306cbbea94df065d3d8/src/main.py#L16-L21
 
 ## Presenting the data
